@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: /5f337722dd992/js/index.js
  */
-var arr = "2020-07-11 16:20:21".split(/[- :]/);//改这里
+var arr = "2020-05-01 12:00:00".split(/[- :]/);//改这里
 var box = document.getElementsByClassName('textCon')[0];
 function init() {
     var width = box.offsetWidth;
@@ -28,13 +28,13 @@ function ran(min, max) {
     max = parseInt(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function timer_start(){
+function timer_start() {
 
-    var start_time = new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]);
+    var start_time = new Date(arr[0], arr[1] - 1, arr[2], arr[3], arr[4], arr[5]);
     // var start_time =  new Date(beginTime);
     // var start_time = Date.parse(beginTime);
-    var duration = parseInt(new Date()- start_time)/1000;
-    var seconds = parseInt( duration % 60);
+    var duration = parseInt(new Date() - start_time) / 1000;
+    var seconds = parseInt(duration % 60);
     if (seconds < 10)
         seconds = "0" + seconds;
     duration = parseInt(duration / 60);
@@ -47,9 +47,9 @@ function timer_start(){
         hours = "0" + hours;
     duration = parseInt(duration / 24);
     var days = duration;
-    document.getElementsByClassName('days-number')[0].innerHTML = ("" +days);
+    document.getElementsByClassName('days-number')[0].innerHTML = ("" + days);
     document.getElementsByClassName('seconds')[0].innerHTML = (hours + " 时 " + minutes + " 分 " + seconds + " 秒");
 }
-window.setInterval(timer_start,1000);
+window.setInterval(timer_start, 1000);
 timer_start();
 init();

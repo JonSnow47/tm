@@ -1,2 +1,1 @@
-# SY
-孙悦
+# Cenotaph
